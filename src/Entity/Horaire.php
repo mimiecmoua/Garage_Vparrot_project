@@ -31,6 +31,9 @@ class Horaire
     #[ORM\Column]
     private ?bool $fermeture = null;
 
+    #[ORM\Column]
+    private ?bool $fermeture2 = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +107,18 @@ class Horaire
     public function setFermeture(bool $fermeture): static
     {
         $this->fermeture = $fermeture;
+
+        return $this;
+    }
+
+    public function isFermeture2(): ?bool
+    {
+        return $this->fermeture2;
+    }
+
+    public function setFermeture2(bool $fermeture2): static
+    {
+        $this->fermeture2 = $fermeture2;
 
         return $this;
     }

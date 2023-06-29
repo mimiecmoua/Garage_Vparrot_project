@@ -1,48 +1,128 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Hello HomeController!
+  Garage V. Parrot
 {% endblock %}
 
 {% block body %}
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" href="#">Action</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Another action</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <img src="images/GarageLogo.png" alt="Logo" width="150" height="150" class="d-inline-block align-text-top" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                Accueil
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Se Connecter</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="card-group">
+        <div class="card">
+          <img src="images/Carrosserie.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">15 ans d'expérience</h5>
+            <p class="card-text">Garage V. parrot a ouvert son atelier à Toulouse</p>
+            <p class="card-text">
+              <small class="text-body-secondary">Ouvert depuis 2021 <img src="images/service-automobile.png" height="40px" width="40px" /></small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/Mecanicien.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Un service de qualité</h5>
+            <p class="card-text">Notre atelier est un véritable lieu de confiance pour nos clients.</p>
+            <p class="card-text">
+              <small class="text-body-secondary">Prise en charge personnalisé <img src="images/personnalisation.png" height="30px" width="30px" /></small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/Tools.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Spécialistes à votre écoute</h5>
+            <p class="card-text">Carrosserie, mécanique, entretient régulier, performance et sécurité.</p>
+            <p class="card-text">
+              <small class="text-body-secondary">Avis clients prouvés <img src="images/valide.png" height="50px" width="50px" /></small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-dark" type="button">Service de réparation</button>
+        <button class="btn btn-dark" type="button">Nos véhicules d'occasion</button>
+      </div>
+    </section>
+    <article>
+      <div class="card-group">
+        <div class="card">
+          <img src="images/achatVoiture.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Avis Client</h5>
+            <p class="card-text">"J'ai été impressionné par ce garage auto. Les véhicules d'occasion sont de grande qualité et le service clientèle de Vincent Parrot était exceptionnel. Une expérience d'achat sans souci. Je le recommande vivement !", Alexandre Leroy.</p>
+            <p class="card-text">
+              <small class="text-muted">Le 21/05/2023</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/concessionnaire.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Avis Client</h5>
+            <p class="card-text">"C'est le meilleur garage auto pour acheter des véhicules d'occasion ! L'équipe est compétente, le service est transparent et la sélection de voitures est excellente. Recommandé à 100% !", Julie martin.</p>
+            <p class="card-text">
+              <small class="text-muted">Le 03/02/2023</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/experienceClient3.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Avis Client</h5>
+            <p class="card-text">"Ce garage auto est incroyable ! J'ai trouvé la voiture d'occasion parfaite ici. L'équipe était très professionnelle et attentionnée. Je recommande vivement !", Lucas Dupont.</p>
+            <p class="card-text">
+              <small class="text-muted">Le 10/11/2022</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <section>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-dark" type="button">Votre avis nous intéresse !</button>
+      </div>
+    </section>
+  </main>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2023 Copyright, Inc</p>
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="images/GarageLogo.png" alt="Logo" width="80" height="70" class="d-inline-block align-text-top" />
+      <use xlink:href="#bootstrap"></use>
+    </a>
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">Horaires d'ouverture</a>
+      </li>
+    </ul>
+  </footer>
 {% endblock %}
