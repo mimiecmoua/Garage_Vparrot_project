@@ -26,6 +26,27 @@
       </div>
     </nav>
   </header>
+  <ul>
+    {% for service in services %}
+      <li>{{ service.titre }}</li>
+      <li>{{ service.description }}</li>
+      <li>{{ service.prixHeure }}</li>
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for horaire in horaires %}
+      <li>{{ horaire.jour }}</li>
+     <li>
+       Matin: 
+        {% if horaire.fermeture %}
+      Fermé
+        {% else %}
+    {{horaire.debutAm}} - {{horaire.finAm}} - {{horaire.debutPm}} - {{horaire.finPm}}
+    {% endif %}<li>
+        
+      
+    {% endfor %}
+  </ul>
   <main>
     <section>
       <div class="card-group">

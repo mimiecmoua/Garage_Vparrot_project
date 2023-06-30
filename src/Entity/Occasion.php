@@ -19,9 +19,6 @@ class Occasion
     #[ORM\Column(length: 255)]
     private ?string $modele = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $mise_circulation = null;
-
     #[ORM\Column]
     private ?int $prix = null;
 
@@ -30,9 +27,6 @@ class Occasion
 
     #[ORM\Column]
     private ?int $places = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $type_motorisation = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
@@ -46,6 +40,12 @@ class Occasion
     #[ORM\ManyToOne(inversedBy: 'occasions')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $auteur = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $motor = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $miseCirculation = null;
 
     public function getId(): ?int
     {
@@ -78,12 +78,12 @@ class Occasion
 
     public function getMiseCirculation(): ?string
     {
-        return $this->mise_circulation;
+        return $this->miseCirculation;
     }
 
-    public function setMiseCirculation(string $mise_circulation): static
+    public function setMiseCirculation(string $miseCirculation): static
     {
-        $this->mise_circulation = $mise_circulation;
+        $this->miseCirculation = $miseCirculation;
 
         return $this;
     }
@@ -120,18 +120,6 @@ class Occasion
     public function setPlaces(int $places): static
     {
         $this->places = $places;
-
-        return $this;
-    }
-
-    public function getTypeMotorisation(): ?string
-    {
-        return $this->type_motorisation;
-    }
-
-    public function setTypeMotorisation(string $type_motorisation): static
-    {
-        $this->type_motorisation = $type_motorisation;
 
         return $this;
     }
@@ -180,6 +168,18 @@ class Occasion
     public function setAuteur(?User $auteur): static
     {
         $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getMotor(): ?string
+    {
+        return $this->motor;
+    }
+
+    public function setMotor(string $motor): static
+    {
+        $this->motor = $motor;
 
         return $this;
     }

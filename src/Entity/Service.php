@@ -20,11 +20,11 @@ class Service
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?int $prix_horaires = null;
-
     #[ORM\Column(length: 255)]
     private ?string $logo = null;
+
+    #[ORM\Column]
+    private ?int $prixHeure = null;
 
     public function getId(): ?int
     {
@@ -55,18 +55,6 @@ class Service
         return $this;
     }
 
-    public function getPrixHoraires(): ?int
-    {
-        return $this->prix_horaires;
-    }
-
-    public function setPrixHoraires(int $prix_horaires): static
-    {
-        $this->prix_horaires = $prix_horaires;
-
-        return $this;
-    }
-
     public function getLogo(): ?string
     {
         return $this->logo;
@@ -75,6 +63,18 @@ class Service
     public function setLogo(string $logo): static
     {
         $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getPrixHeure(): ?int
+    {
+        return $this->prixHeure;
+    }
+
+    public function setPrixHeure(int $prixHeure): static
+    {
+        $this->prixHeure = $prixHeure;
 
         return $this;
     }
