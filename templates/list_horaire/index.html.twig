@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+  {% for horaire in horaires %}
+    <li>
+      <span class="fw-bold">{{ horaire.jour }}</span> - Matin:{% if horaire.fermeture %}
+        Fermé
+      {% else %}
+        {{ horaire.debutAm }} - {{ horaire.finAm }}
+      {% endif %}- Aprés midi:{% if horaire.fermeture %}
+        Fermé
+      {% else %}
+        {{ horaire.debutPm }} - {{ horaire.finPm }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
