@@ -1,0 +1,17 @@
+<section class="w-100 py-5 container bg-grey">
+  <h2 class="text-center">SERVICES DE REPARATION</h2>
+  <div class="row py-lg-5 justify-content-around">
+    {% for service in services %}
+      <div class="col-lg-2 col-md-3 col-sm-8">
+        <div class="card h-100">
+          <img src="{{ service.logo }}" class="card-img-top img-fluid py-3 px-3" alt="{{ service.titre }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ service.titre }}</h5>
+            <p class="card-text">{{ service.description }}</p>
+            <p>{{ service.prixHeure }} Euros/H</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

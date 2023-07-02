@@ -5,11 +5,6 @@
 {% endblock %}
 
 {% block body %}
-  <ul>
-    {% for service in services %}
-      <li>{{ service.titre }}</li>
-      <li>{{ service.description }}</li>
-      <li>{{ service.prixHeure }}</li>
-    {% endfor %}
-  </ul>
+  {% include 'home/welcome.html.twig' %}
+  {{ render(controller('App\\Controller\\SectionServiceController::index')) }}
 {% endblock %}

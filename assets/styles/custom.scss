@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,200&family=Rajdhani:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,200&display=swap');
+
+body {
+    font-family: 'Barlow', sans-serif; 
+}
+h1 {
+    font-family: 'Rajdhani', sans-serif;  
+}
+$danger: #b42222;
+$white: #fff;
+$link-color: white;
+$link-hover-color: grey;
+
+.smaller {
+  font-size: 12px;
+}
+
+.bigger {
+  font-size: 48px;
+}
+
+.white {
+  color: $white;
+}
+.bg-grey {
+  background-color: rgb(183, 181, 181);
+}
