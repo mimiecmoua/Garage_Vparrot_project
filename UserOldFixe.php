@@ -18,6 +18,9 @@ class UserFixtures extends Fixture
         $user->setNom('Doe');
         $user->setPrenom('John');
 
+
+
+
         $manager->persist($user);
 
 
@@ -28,6 +31,7 @@ class UserFixtures extends Fixture
         $user1->setNom('Bernard');
         $user1->setPrenom('Antoine');
 
+
         $manager->persist($user1);
 
         $user2 = new user();
@@ -37,6 +41,7 @@ class UserFixtures extends Fixture
         $user2->setNom('Dubois');
         $user2->setPrenom('Pierre');
 
+
         $manager->persist($user2);
 
         $user3 = new user();
@@ -45,6 +50,7 @@ class UserFixtures extends Fixture
         $user3->setPassword($this->$passwordEncoder->encodePassword($user2, 'password101'));
         $user3->setNom('Martin');
         $user3->setPrenom('Jean');
+
 
         $manager->persist($user3);
 

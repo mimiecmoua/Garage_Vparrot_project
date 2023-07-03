@@ -23,9 +23,9 @@ class Commentaire
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $publie = null;
 
-    #[ORM\ManyToOne(inversedBy: 'commentaires')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $auteur = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $note = null;
 
     public function getId(): ?int
     {
@@ -68,14 +68,15 @@ class Commentaire
         return $this;
     }
 
-    public function getAuteur(): ?User
+
+    public function getNote(): ?int
     {
-        return $this->auteur;
+        return $this->note;
     }
 
-    public function setAuteur(?User $auteur): static
+    public function setNote(?int $note): static
     {
-        $this->auteur = $auteur;
+        $this->note = $note;
 
         return $this;
     }

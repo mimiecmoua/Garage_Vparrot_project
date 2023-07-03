@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -35,22 +33,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
-
-    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Occasion::class)]
-    private Collection $occasions;
-
-    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Commentaire::class)]
-    private Collection $commentaires;
-
-    #[ORM\OneToMany(mappedBy: 'acteur', targetEntity: Contact::class)]
-    private Collection $contacts;
-
-    public function __construct()
-    {
-        $this->occasions = new ArrayCollection();
-        $this->commentaires = new ArrayCollection();
-        $this->contacts = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -142,96 +124,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPrenom(string $prenom): static
     {
         $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Occasion>
-     */
-    public function getOccasions(): Collection
-    {
-        return $this->occasions;
-    }
-
-    public function addOccasion(Occasion $occasion): static
-    {
-        if (!$this->occasions->contains($occasion)) {
-            $this->occasions->add($occasion);
-            $occasion->setAuteur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOccasion(Occasion $occasion): static
-    {
-        if ($this->occasions->removeElement($occasion)) {
-            // set the owning side to null (unless already changed)
-            if ($occasion->getAuteur() === $this) {
-                $occasion->setAuteur(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Commentaire>
-     */
-    public function getCommentaires(): Collection
-    {
-        return $this->commentaires;
-    }
-
-    public function addCommentaire(Commentaire $commentaire): static
-    {
-        if (!$this->commentaires->contains($commentaire)) {
-            $this->commentaires->add($commentaire);
-            $commentaire->setAuteur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCommentaire(Commentaire $commentaire): static
-    {
-        if ($this->commentaires->removeElement($commentaire)) {
-            // set the owning side to null (unless already changed)
-            if ($commentaire->getAuteur() === $this) {
-                $commentaire->setAuteur(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Contact>
-     */
-    public function getContacts(): Collection
-    {
-        return $this->contacts;
-    }
-
-    public function addContact(Contact $contact): static
-    {
-        if (!$this->contacts->contains($contact)) {
-            $this->contacts->add($contact);
-            $contact->setActeur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeContact(Contact $contact): static
-    {
-        if ($this->contacts->removeElement($contact)) {
-            // set the owning side to null (unless already changed)
-            if ($contact->getActeur() === $this) {
-                $contact->setActeur(null);
-            }
-        }
 
         return $this;
     }

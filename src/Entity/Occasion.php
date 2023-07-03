@@ -37,10 +37,6 @@ class Occasion
     #[ORM\Column(length: 255)]
     private ?string $image3 = null;
 
-    #[ORM\ManyToOne(inversedBy: 'occasions')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $auteur = null;
-
     #[ORM\Column(length: 255)]
     private ?string $motor = null;
 
@@ -160,17 +156,6 @@ class Occasion
         return $this;
     }
 
-    public function getAuteur(): ?User
-    {
-        return $this->auteur;
-    }
-
-    public function setAuteur(?User $auteur): static
-    {
-        $this->auteur = $auteur;
-
-        return $this;
-    }
 
     public function getMotor(): ?string
     {

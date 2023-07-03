@@ -8,6 +8,7 @@ use App\Entity\Occasion;
 
 class OccasionFixtures extends Fixture
 {
+    public const OCCASION_REFERENCE = 'occasion';
     public function load(ObjectManager $manager): void
     {
         $occasion = new Occasion();
@@ -21,6 +22,7 @@ class OccasionFixtures extends Fixture
         $occasion->setImage3('images/vitara3.jpg');
         $occasion->setMotor('Diesel');
         $occasion->setMiseCirculation('30/09/2002');
+
 
         $manager->persist($occasion);
 
@@ -36,6 +38,8 @@ class OccasionFixtures extends Fixture
         $occasion1->setMotor('Essence');
         $occasion1->setMiseCirculation('01/04/1994');
 
+
+
         $manager->persist($occasion1);
 
         $occasion2 = new Occasion();
@@ -49,6 +53,8 @@ class OccasionFixtures extends Fixture
         $occasion2->setImage3('images/passat3.jpg');
         $occasion2->setMotor('Diesel');
         $occasion2->setMiseCirculation('11/12/2019');
+
+
 
         $manager->persist($occasion2);
 
@@ -64,6 +70,7 @@ class OccasionFixtures extends Fixture
         $occasion3->setMotor('Diesel');
         $occasion3->setMiseCirculation('20/09/2018');
 
+
         $manager->persist($occasion3);
 
         $occasion4 = new Occasion();
@@ -77,6 +84,7 @@ class OccasionFixtures extends Fixture
         $occasion4->setImage3('images/fiat3.jpg');
         $occasion4->setMotor('Essence');
         $occasion4->setMiseCirculation('23/05/1985');
+
 
         $manager->persist($occasion4);
 
@@ -92,8 +100,10 @@ class OccasionFixtures extends Fixture
         $occasion5->setMotor('Essence');
         $occasion5->setMiseCirculation('02/11/2007');
 
+
         $manager->persist($occasion5);
 
         $manager->flush();
+        $this->addReference(self::OCCASION_REFERENCE, $occasion4);
     }
 }

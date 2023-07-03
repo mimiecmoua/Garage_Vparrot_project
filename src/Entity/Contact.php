@@ -35,9 +35,9 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $action = null;
 
-    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $acteur = null;
+    private ?Occasion $Voiture = null;
 
     public function getId(): ?int
     {
@@ -128,14 +128,14 @@ class Contact
         return $this;
     }
 
-    public function getActeur(): ?User
+    public function getVoiture(): ?Occasion
     {
-        return $this->acteur;
+        return $this->Voiture;
     }
 
-    public function setActeur(?User $acteur): static
+    public function setVoiture(?Occasion $Voiture): static
     {
-        $this->acteur = $acteur;
+        $this->Voiture = $Voiture;
 
         return $this;
     }
