@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\HoraireRepository;
 use App\Repository\ServiceRepository;
 
+
 class HomeController extends AbstractController
 {
     #[Route('/home', name: 'app_home')]

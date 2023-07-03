@@ -30,16 +30,16 @@ class OccasionFixtures extends Fixture
         $occasion1->setPrix('1650');
         $occasion1->setKilometrage('262000');
         $occasion1->setPlaces('5');
-        $occasion1->setImage(('images/clio.jpg'));
-        $occasion1->setImage2(('images/clio2.jpg'));
-        $occasion1->setImage3(('images/clio3.jpg'));
+        $occasion1->setImage('images/clio.jpg');
+        $occasion1->setImage2('images/clio2.jpg');
+        $occasion1->setImage3('images/clio3.jpg');
         $occasion1->setMotor('Essence');
         $occasion1->setMiseCirculation('01/04/1994');
 
         $manager->persist($occasion1);
 
         $occasion2 = new Occasion();
-        $occasion2->setMarque('Volkwagen');
+        $occasion2->setMarque('Volkswagen');
         $occasion2->setModele('Passat');
         $occasion2->setPrix('20890');
         $occasion2->setKilometrage('85254');
