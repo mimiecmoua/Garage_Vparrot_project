@@ -7,4 +7,6 @@
 {% block body %}
   {% include 'home/welcome.html.twig' %}
   {{ render(controller('App\\Controller\\SectionServiceController::index')) }}
+  {{ render(controller('App\\Controller\\SectionOccasionController::index')) }}
+  {{ render(controller('App\\Controller\\SectionCommentaireController::index')) }}
 {% endblock %}
