@@ -24,7 +24,8 @@ class HomeController extends AbstractController
             'horaires' => $horaireRepository->findAll([]),
             'services' => $serviceRepository->findAll([]),
             'occasions' => $occasionRepository->findAll([]),
-            'commentaires' => $commentaireRepository->findAll([])
+            'commentaires' => $commentaireRepository->findAll([]),
+
 
         ]);
     }
