@@ -3,17 +3,17 @@
 namespace App\Form;
 
 use App\Entity\Occasion;
-use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 
 class NewOccasionType extends AbstractType
@@ -56,77 +56,6 @@ class NewOccasionType extends AbstractType
                     'placeholder' => 'saisir le nombre de places'
                 ]
             ])
-            ->add('image', TextType::class, [
-                'label' => 'image',
-                'constraints' => [new NotBlank()],
-                'attr' => [
-                    'placeholder' => 'saisir le nom de l\'image'
-                ]
-            ])
-            ->add('imageAttached', FileType::class, [
-                'label' => 'upload image',
-                'mapped' => false,
-                'required' => true,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2048k',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/jpg',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image (jpeg, png, jpg)',
-                    ])
-                ],
-            ])
-
-            ->add('image2', TextType::class, [
-                'label' => 'image2',
-                'constraints' => [new NotBlank()],
-                'attr' => [
-                    'placeholder' => 'saisir le nom de l\'image2'
-                ]
-            ])
-            ->add('image2Attached', FileType::class, [
-                'label' => 'upload image2',
-                'mapped' => false,
-                'required' => true,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2048k',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/jpg',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image (jpeg, png, jpg)',
-                    ])
-                ],
-            ])
-
-            ->add('image3', TextType::class, [
-                'label' => 'image3',
-                'constraints' => [new NotBlank()],
-                'attr' => [
-                    'placeholder' => 'saisir le nom de l\'image3'
-                ]
-            ])
-            ->add('image3Attached', FileType::class, [
-                'label' => 'upload image3',
-                'mapped' => false,
-                'required' => true,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2048k',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/jpg',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image (jpeg, png, jpg)',
-                    ])
-                ],
-            ])
 
             ->add('motor', TextType::class, [
                 'label' => 'Type Motorisation',
@@ -142,6 +71,35 @@ class NewOccasionType extends AbstractType
                     'placeholder' => 'saisir la date de mise en circulation'
                 ]
             ])
+
+            ->add("file", FileType::class, [
+                'label' => 'image1',
+                "required" => false,
+                "mapped" => false,
+                "constraints" => [
+                    new Image(),
+                    new NotNull()
+                ]
+            ])
+            ->add("file2", FileType::class, [
+                'label' => 'image2',
+                "required" => false,
+                "mapped" => false,
+                "constraints" => [
+                    new Image(),
+                    new NotNull()
+                ]
+            ])
+            ->add("file3", FileType::class, [
+                'label' => 'image3',
+                "required" => false,
+                "mapped" => false,
+                "constraints" => [
+                    new Image(),
+                    new NotNull()
+                ]
+            ])
+
             ->add('submit', SubmitType::class, [
                 'label' => "valider"
             ]);
