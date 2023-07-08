@@ -29,10 +29,10 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $vu = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $action = null;
 
     #[ORM\ManyToOne]

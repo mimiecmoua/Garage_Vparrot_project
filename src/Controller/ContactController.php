@@ -28,6 +28,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
 
+
             $this->entityManager->persist($contact);
             $this->entityManager->flush();
 

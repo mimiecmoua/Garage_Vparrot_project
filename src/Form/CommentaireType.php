@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CommentaireType extends AbstractType
 {
@@ -24,9 +25,9 @@ class CommentaireType extends AbstractType
                     'placeholder' => 'saisir votre Nom'
                 ]
             ])
-            ->add('commentaire', TextType::class, [
+            ->add('commentaire', TextareaType::class, [
                 'label' => 'Message',
-                'constraints' => [new Length(['min' => 2, 'max' => 250]), new NotBlank()],
+                'constraints' => [new NotBlank()],
                 'attr' => [
                     'placeholder' => 'saisir votre commentaire'
                 ]

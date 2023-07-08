@@ -9,10 +9,10 @@
             <h5 class="card-title">{{ occasion.modele }}</h5>
             <p class="card-text">{{ occasion.motor }}</p>
             <p>{{ occasion.prix }} Euros</p>
-            <button type="button" class="btn btn-dark text-or">Consulter</button>
           </div>
         </div>
       </div>
     {% endfor %}
+    <a href="{{ path('app_occasions') }}" class="btn btn-dark text-or">Consulter nos occasions</a>
   </div>
 </section>
