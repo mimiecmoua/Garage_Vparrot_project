@@ -45,7 +45,7 @@ class RegisterOccasionController extends AbstractController
             /** @var UploadedFile $file2 */
             $file2 = $form->get("file2")->getData();
             $filename2 = sprintf(
-                "%s_%s.%s",
+                "images/%s-%s.%s",
                 $slugger->slug($file2->getClientOriginalName()),
                 uniqid(),
                 $file2->getClientOriginalExtension()
@@ -57,7 +57,7 @@ class RegisterOccasionController extends AbstractController
             /** @var UploadedFile $file3 */
             $file3 = $form->get("file3")->getData();
             $filename3 = sprintf(
-                "%s_%s.%s",
+                "images/%s-%s.%s",
                 $slugger->slug($file3->getClientOriginalName()),
                 uniqid(),
                 $file3->getClientOriginalExtension()

@@ -11,7 +11,7 @@
       <div class="row py-lg-2 justify-content-around">
         <div class="col-lg-4 col-md-3 col-sm-8 my-2">
           <div class="card h-100">
-            <img src="public/images/uploads/{{ occasion.image }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
+            <img src="{{ asset(occasion.image) }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
             <div class="card-body">
               <h5 class="card-title">{{ occasion.modele }}</h5>
               <p class="card-text">{{ occasion.motor }}</p>
