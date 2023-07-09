@@ -8,7 +8,7 @@
   <main class="w-100 py-5 container bg-dark mt-5">
     <h2 class="text-center white">NOS VEHICULES D'OCCASION AU {{ 'now'|date('d/m/Y') }}</h2>
     <div class="row py-lg-2 justify-content-around">
-      {% for occasion in occasions %}
+      {% for occasion in pagination %}
         <div class="col-lg-4 col-md-3 col-sm-8 my-2">
           <div class="card h-100">
             <img src="{{ occasion.image }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
@@ -22,5 +22,6 @@
         </div>
       {% endfor %}
     </div>
+    {{ knp_pagination_render(pagination) }}
   </main>
 {% endblock %}

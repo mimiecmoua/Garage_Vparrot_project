@@ -6,22 +6,19 @@
 
 {% block body %}
   <main class="w-100 py-5 container bg-dark mt-5">
-    {% for occasion in pagination %}
-      <h2 class="text-center white">{{ occasion.marque }}-{{ occasion.modele }}</h2>
-      <div class="row py-lg-2 justify-content-around">
-        <div class="col-lg-4 col-md-3 col-sm-8 my-2">
-          <div class="card h-100">
-            <img src="{{ asset(occasion.image) }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
-            <div class="card-body">
-              <h5 class="card-title">{{ occasion.modele }}</h5>
-              <p class="card-text">{{ occasion.motor }}</p>
-              <p>{{ occasion.prix }} Euros</p>
-            </div>
-            <a href="{{ path('app_contact') }}" class="btn btn-dark text-or">Contact</a>
+    <h2 class="text-center white">{{ occasion.marque }}-{{ occasion.modele }}</h2>
+    <div class="row py-lg-2 justify-content-around">
+      <div class="col-lg-4 col-md-3 col-sm-8 my-2">
+        <div class="card h-100">
+          <img src="{{ asset(occasion.image) }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ occasion.modele }}</h5>
+            <p class="card-text">{{ occasion.motor }}</p>
+            <p>{{ occasion.prix }} Euros</p>
           </div>
+          <a href="{{ path('app_contact') }}" class="btn btn-dark text-or">Contact</a>
         </div>
       </div>
-    {% endfor %}
-    {{ knp_pagination_render(pagination) }}
+    </div>
   </main>
 {% endblock %}
