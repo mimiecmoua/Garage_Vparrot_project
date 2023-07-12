@@ -35,9 +35,9 @@ class Contact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $action = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true)]
-    private ?Occasion $Voiture = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $voitureId = null;
+
 
     public function getId(): ?int
     {
@@ -128,14 +128,14 @@ class Contact
         return $this;
     }
 
-    public function getVoiture(): ?Occasion
+    public function getVoitureId(): ?int
     {
-        return $this->Voiture;
+        return $this->voitureId;
     }
 
-    public function setVoiture(?Occasion $Voiture): static
+    public function setVoitureId(?int $voitureId): static
     {
-        $this->Voiture = $Voiture;
+        $this->voitureId = $voitureId;
 
         return $this;
     }

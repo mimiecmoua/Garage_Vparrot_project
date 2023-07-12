@@ -4,16 +4,16 @@ Le garage V. parrot est un site web présentant des services de réparation et d
 
 # # Environnement de développement
 
+Symfony 6
+
 # # # Pré-requis
 
     * PHP 8.0.28
     * Composer
     * Symfony CLI
-    * Docker
-    * Docker-compose
     * nodejs et npm
 
-Vous pouvez vérifier les pré-requis (sauf Docker et Docker-compose) avec la commande
+Vous pouvez vérifier les pré-requis avec la commande
 suivante (de le CLI Symfony):
 
 ```shell
@@ -26,17 +26,25 @@ symfony check:requirements
 composer install
 npm install
 npm run build
-docker-compose up -d
 synfomy serve -d
 ```
 
-# # Lancer des test
+## Cloner le dépôt GitHub du projet
 
 ```bash
-php bin/phpunit --testdox
+$ git clone < https://github.com/mimiecmoua/Garage_Vparrot_project.git >
 ```
 
-### Création d'un administrateur pour le back-office de l'application web
+## Utilisation
+
+Une fois le projet correctement installé, vous pouvez le lancer en
+utilisant le serveur de développement intégré de Symfony :
+
+```shell
+Symfony server:start -d
+```
+
+## Création du back-office
 
 page de connexion
 
@@ -56,3 +64,36 @@ L'authentification pour user => RegisterType
 Création controller du compte => Accountcontroller.php
 Modification des règles de sécutrité pour accéder à la page "compte".
 ```
+
+Back-office avec EasyAdmin
+
+Installation de bundle EasyAdmin dans mon projet Symfony
+
+````shell
+symfony composer require easycorp/easyadmin-bundle
+
+
+Une fois le bundle EasyAdmin installé, j'ai utilisé la commande Symfony pour générer le CRUD (Create, read, Update, Delete).
+
+```shell
+Symfony console make:admin:crud
+
+La commande m'a guidé à travers le processus de génération de l'interface d'administration. J'ai spécifié les entités à administrer (dans ce cas, mes entité User, Service, Occasion, Horaire, Contact, Commentaire) et les champs que je souhaite afficher et gérer dans l'interface.
+
+Une fois que j'ai répondu à toutes les questions, EasyAdmin a automatiquement généré les fichiers de configuration et de code nécessaires pour l'interface d'administration de mes entités.
+
+J'ai ouvert mon navigateur et accédé à l'URL de mon application suivie de /admin. Par exemple, si mon application est en cours d'exécution sur http://localhost:8000, j'ai ouvert http://localhost:8000/admin.
+
+Maintenant, je vois l'interface d'administration générée par EasyAdmin pour mes entités, mais je devais trouver un solution pour implenter mes formulaires déjà existant.
+
+J'ai donc configurer mon DashboardController.php avec une fonction configureMenuItems() et ainsi créer des liens avec le CRUD "linkToCrud".
+J'ai également sécurisé l'accés aux données via le use  Trait\UpdateTrait et use Trait\ReadOnlyTrait.
+
+ J'ai maintenant un administrateur fonctionnel pour le back-office de mon application Symfony grâce à EasyAdmin. Je peux étendre ces fonctionnalités pour d'autres entités en utilisant la même approche. J'ai consulté la documentation d'EasyAdmin pour en savoir plus sur ses fonctionnalités avancées.
+
+
+### Resources supplémentaires
+
+Tutoriel Filtrer des annonces dans un projet Symfony
+Grafikart < https://grafikart.fr/tutoriels/filtre-1071#autoplay >
+````

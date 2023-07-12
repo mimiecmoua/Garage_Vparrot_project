@@ -16,7 +16,7 @@
             <p class="card-text">{{ occasion.motor }}</p>
             <p>{{ occasion.prix }} Euros</p>
           </div>
-          <a href="{{ path('app_contact') }}" class="btn btn-dark text-or">Contact</a>
+          <a href="{{ path('app_contact', { voiture: occasion.id }) }}" class="btn btn-dark text-or">Contact</a>
         </div>
       </div>
     </div>

@@ -19,14 +19,15 @@ class ContactController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request): Response
+    #[Route('/contact/{voiture}', name: 'app_contact')]
+    public function index($voiture, Request $request): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
+            $contact->setVoitureId($voiture);
 
 
             $this->entityManager->persist($contact);

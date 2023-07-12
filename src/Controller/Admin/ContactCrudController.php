@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ContactCrudController extends AbstractCrudController
 {
+    use Trait\UpdateTrait;
     public static function getEntityFqcn(): string
     {
         return Contact::class;
