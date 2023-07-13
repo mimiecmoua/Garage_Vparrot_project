@@ -8,28 +8,31 @@ Symfony 6
 
 # # # Pré-requis
 
-    * PHP 8.0.28
-    * Composer
+    * PHP 8.0.28 (version 7.4 ou supérieur)
+    * Composer (gestionnaire de dépendances pour php)
     * Symfony CLI
-    * nodejs et npm
+    * nodejs et npm (gestionnaire de paquets JavaScript)
 
 Vous pouvez vérifier les pré-requis avec la commande
-suivante (de le CLI Symfony):
+suivante (dans le CLI Symfony):
 
 ```shell
 symfony check:requirements
 ```
 
-# # # Lancer l'environnement de développement
+# # # Lancer l'environnement de développement en local
+
+Ce guide fournit les étapes nécessaires pour exécuter localement du site.
 
 ```shell
+php
 composer install
 npm install
 npm run build
 synfomy serve -d
 ```
 
-## Cloner le dépôt GitHub du projet
+## Cloner le dépôt GitHub du projet sur votre machine en utilisant la commande suivante :
 
 ```bash
 $ git clone < https://github.com/mimiecmoua/Garage_Vparrot_project.git >
@@ -94,6 +97,6 @@ J'ai également sécurisé l'accés aux données via le use  Trait\UpdateTrait e
 
 ### Resources supplémentaires
 
-Tutoriel Filtrer des annonces dans un projet Symfony
-Grafikart < https://grafikart.fr/tutoriels/filtre-1071#autoplay >
+"Tutoriel Filtrer des annonces dans un projet Symfony
+Grafikart < https://grafikart.fr/tutoriels/filtre-1071#autoplay >"
 ````
