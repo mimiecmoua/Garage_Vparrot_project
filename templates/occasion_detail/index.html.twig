@@ -5,20 +5,45 @@
 {% endblock %}
 
 {% block body %}
-  <main class="w-100 py-5 container bg-dark mt-5">
-    <h2 class="text-center white">{{ occasion.marque }}-{{ occasion.modele }}</h2>
-    <div class="row py-lg-2 justify-content-around">
-      <div class="col-lg-4 col-md-3 col-sm-8 my-2">
-        <div class="card h-100">
-          <img src="{{ asset(occasion.image) }}" class="card-img-top img-fluid py-3 px-3" alt="{{ occasion.marque }}" />
-          <div class="card-body">
-            <h5 class="card-title">{{ occasion.modele }}</h5>
-            <p class="card-text">{{ occasion.motor }}</p>
-            <p>{{ occasion.prix }} Euros</p>
-          </div>
-          <a href="{{ path('app_contact', { voiture: occasion.id }) }}" class="btn btn-dark text-or">Contact</a>
-        </div>
+  
+  <main class="w-75 py-2 container bg-dark mt-5 mb-5">
+    <div class="card mb-3">
+      <h3 class="card-header text-center">{{ occasion.marque }}</h3>
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ occasion.modele }}</h5>
       </div>
-    </div>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ asset(occasion.image) }}" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset(occasion.image2) }}" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset(occasion.image3) }}" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Mise en circulation le : {{ occasion.miseCirculation }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ occasion.motor }}</li>
+        <li class="list-group-item">{{ occasion.places }} Places</li>
+        <li class="list-group-item">{{ occasion.kilometrage }} km</li>
+        <li class="list-group-item">{{ occasion.prix }} Euros</li>
+      </ul>
+      <div class="card-body">
+        <a href="{{ path('app_contact', { voiture: occasion.id }) }}" class="card-link">Contact pour cette annonce</a>
+      </div>
   </main>
 {% endblock %}

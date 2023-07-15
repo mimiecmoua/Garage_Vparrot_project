@@ -73,6 +73,6 @@ symfony console make:admin:CRUD
 
 ### J'ai donc configuré mon DashboardController.php avec une fonction configureMenuItems() et ainsi créer des liens avec le CRUD "linkToCrud".
 
-### J'ai également sécurisé l'accès aux données en créant un dossier Trait puis en créant deux fichiers ReadOnlytrait.php et UpdateTrait.php.
+### J'ai également sécurisé l'accès aux données en créant un dossier Trait puis en créant deux fichiers ReadOnlytrait.php et UpdateTrait.php dans les dossiers Controller/Admin/Trait .
 
 ### J'ai maintenant un administrateur fonctionnel pour le back-office de mon application Symfony grâce à EasyAdmin. Je peux étendre ces fonctionnalités pour d'autres entités en utilisant la même approche. J'ai consulté la documentation d'EasyAdmin pour en savoir plus sur ses fonctionnalités avancées.
