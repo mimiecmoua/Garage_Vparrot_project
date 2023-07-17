@@ -9,6 +9,9 @@
     <h1>Bienvenue "{{ app.user.prenom }}" dans l'espace de gestion.</h1>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto p-5">
+    {% if is_granted('ROLE_ADMIN') %}
+      <a href="{{ path('app_register') }}" class="btn btn-dark">Inscription employé</a>
+    {% endif %}
     <a href="{{ path('app_register_occasion') }}" class="btn btn-dark">Ajouter une nouvelle voiture</a>
     <a href="{{ path('app_commentaire') }}" class="btn btn-dark active">Ajouter un nouveau commentaire</a>
     <a href="{{ path('admin') }}" class="btn btn-dark active">Accéder au tableau de bord</a>

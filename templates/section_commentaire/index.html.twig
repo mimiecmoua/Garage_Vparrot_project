@@ -1,15 +1,16 @@
 <section>
   <figure class="text-center container py-5 bg-grey mt-5">
+    <div class="justyfy-content-center display-3">Avis Clients</div>
     {% for commentaire in commentaires %}
       <blockquote class="blockquote">
-        <div class="justyfy-content-center">
-          Avis Clients <img src="images/cinq-etoiles.png" alt="cinq étoiles" width="40px" height="40px" />
-        </div>
         <p class="mb-0">Mr {{ commentaire.nom }} , {{ commentaire.commentaire }}</p>
       </blockquote>
       <figcaption class="blockquote-footer">
         <cite title="Source Title">{{ commentaire.publie|date('d-m-Y') }}</cite>
         <p>
+          <div class="star-rating justyfy-content-center">
+            <div {{ react_component('stars', { notation: commentaire.note }) }}></div>
+          </div>
           <strong>Note : {{ commentaire.note }}/5</strong>
         </p>
       </figcaption>

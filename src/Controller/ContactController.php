@@ -32,11 +32,7 @@ class ContactController extends AbstractController
 
             $this->entityManager->persist($contact);
             $this->entityManager->flush();
-
-            return $this->render('contact/index.html.twig', [
-                'controller_name' => 'ContactController',
-                'form' => $form->createView()
-            ]);
+            return $this->redirectToRoute('app_occasion_detail', ['id' => $voiture]);
         } else {
 
             return $this->render('contact/index.html.twig', [

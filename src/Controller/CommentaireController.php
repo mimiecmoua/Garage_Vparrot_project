@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Commentaire;
 use App\Form\CommentaireType;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+
 
 class CommentaireController extends AbstractController
 {
@@ -27,20 +29,16 @@ class CommentaireController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire = $form->getData();
+            $commentaire->setPublie(new DateTime());
 
             $this->entityManager->persist($commentaire);
             $this->entityManager->flush();
-
-            return $this->render('commentaire/index.html.twig', [
-                'controller_name' => 'CommentaireController',
-                'form' => $form->createView()
-            ]);
-        } else {
-
-            return $this->render('commentaire/index.html.twig', [
-                'controller_name' => 'CommentaireController',
-                'form' => $form->createView()
-            ]);
+            return $this->redirectToRoute('app_home');
         }
+
+        return $this->render('commentaire/index.html.twig', [
+            'controller_name' => 'CommentaireController',
+            'form' => $form->createView()
+        ]);
     }
 }

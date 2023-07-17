@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Commentaire;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -40,7 +41,8 @@ class DashboardController extends AbstractDashboardController
             ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Horaire', 'fas fa-clock', Horaire::class)
             ->setPermission('ROLE_ADMIN');
-        yield MenuItem::linkToCrud('Contact', 'fas fa-book', Contact::class);
+        yield MenuItem::linkToCrud('Contact', 'fas fa-phone', Contact::class);
+        yield MenuItem::linkToCrud('Commentaire', 'fas fa-book', Commentaire::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

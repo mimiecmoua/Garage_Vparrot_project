@@ -67,6 +67,7 @@ class RegisterOccasionController extends AbstractController
             $occasion->setImage3($filename3);
             $this->entityManager->persist($occasion);
             $this->entityManager->flush();
+            return $this->redirectToRoute('app_occasion_detail', ['id' => $occasion->getId()]);
         }
         return $this->render('register_occasion/index.html.twig', [
             'controller_name' => 'RegisterOccasionController',
