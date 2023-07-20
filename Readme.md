@@ -43,7 +43,7 @@ Démarrer le serveur
 
 ## Deploiement
 
-Pour déployer le projet sur ... voici les commandes à taper
+Pour déployer le projet sur Plesk voici les commandes à taper
 
 ```bash
   npm run deploy
@@ -76,3 +76,11 @@ symfony console make:admin:CRUD
 ### J'ai également sécurisé l'accès aux données en créant un dossier Trait puis en créant deux fichiers ReadOnlytrait.php et UpdateTrait.php dans les dossiers Controller/Admin/Trait .
 
 ### J'ai maintenant un administrateur fonctionnel pour le back-office de mon application Symfony grâce à EasyAdmin. Je peux étendre ces fonctionnalités pour d'autres entités en utilisant la même approche. J'ai consulté la documentation d'EasyAdmin pour en savoir plus sur ses fonctionnalités avancées.
+
+# Base de données
+
+Vous pouvez trouver un fichier de ma base de données dans mon trello et à la racine de mon projet Symfony.
+
+# Journal de bord
+
+J'ai rédigé un journal de bord sur tout le déroulement de mon projet jour par jour.
