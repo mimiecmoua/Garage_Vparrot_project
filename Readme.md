@@ -43,7 +43,7 @@ Démarrer le serveur
 
 ## Deploiement
 
-Pour déployer le projet sur Plesk voici les commandes à taper
+Pour déployer le projet sur Plesk j'ai utilisé Bitvise.
 
 ```bash
   npm run deploy
@@ -83,4 +83,4 @@ Vous pouvez trouver un fichier de ma base de données dans mon trello et à la r
 
 # Journal de bord
 
-J'ai rédigé un journal de bord sur tout le déroulement de mon projet jour par jour.
+J'ai rédigé un journal de bord sur tout le déroulement de mon projet jour par jour. que vous pouvez lire dans mon Trello.
